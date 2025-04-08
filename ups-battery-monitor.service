@@ -1,0 +1,20 @@
+[Unit]
+Description=UPS Battery Monitor
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/sbin/bat.py
+Restart=always
+RestartSec=10
+User=root
+Group=root
+
+# Required for I2C access
+SupplementaryGroups=i2c
+
+# Make sure the service is restarted if it fails
+StartLimitIntervalSec=0
+
+[Install]
+WantedBy=multi-user.target
