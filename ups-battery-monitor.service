@@ -13,8 +13,5 @@ Group=root
 # Required for I2C access
 SupplementaryGroups=i2c
 
-# Make sure the service is restarted if it fails
-StartLimitIntervalSec=0
-
 [Install]
 WantedBy=multi-user.target
